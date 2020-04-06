@@ -1,0 +1,41 @@
+.list {
+  width: 100%;
+}
+
+.education-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-details-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.education-programme {
+  top: 20px;
+  width: inherit;
+}
+
+.education-institute {
+  top: 40px;
+  width: inherit;
+}
+.education-year {
+  top: 60px;
+  width: inherit;
+}
+.education-marks {
+  top: 80px;
+  width: inherit;
+}
+
+.education-delete {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

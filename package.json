@@ -1,0 +1,29 @@
+{
+  "name": "rsoft",
+  "version": "1.0.0",
+  "description": "Resume Generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\"  \"npm run client\""
+  },
+  "keywords": [
+    "Resume",
+    "RSOFT",
+    "Generator"
+  ],
+  "author": "Raj Garg",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "node-latex": "^2.6.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}

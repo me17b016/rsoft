@@ -1,0 +1,114 @@
+.side-nav {
+  margin-top: 0px;
+  height: 100%;
+  background-color: #081018;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.side-nav::-webkit-scrollbar {
+  background-color:#fff;
+  width:0px;
+}
+
+/* background of the scrollbar except button or resizer */
+.side-nav::-webkit-scrollbar-track {
+  background-color:#263238
+}
+
+/* scrollbar itself */
+.side-nav::-webkit-scrollbar-thumb {
+  background-color:#546e7a;
+  border-radius:16px;
+  border:2px solid #263238
+}
+
+/* set button(top and bottom of the scrollbar) */
+.side-nav::-webkit-scrollbar-button {display:none}
+
+.side-nav-links {
+  background-color: #081018;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-right: 0px;
+}
+
+.side-nav-link {
+  padding: 0%;
+  width: fit-content;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin: 5px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 50;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.side-nav-link-navlink {
+  color: #1de9b6;
+  padding: 0%;
+}
+
+
+.side-nav-link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #1de9b6;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.side-nav-link:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+.side-nav-link-navlink-random::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #1de9b6;
+}
+
+.side-nav-extras {
+  padding: 0%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.side-nav-savemake {
+  width: 84%;
+  padding: 15px 10px 15px 10px;
+  border-radius: 4px;
+  border: 2px solid #004d40;
+  background-color:#69f0ae;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #004d40;
+  letter-spacing: 1px;
+  box-shadow: 0px 1px 5px #00823F;
+}
+
+.side-nav-savemake:active {
+  box-shadow: 0px 0px 1px #00823F;
+  transform: translate(0px, 0.5px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

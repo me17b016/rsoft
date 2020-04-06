@@ -1,0 +1,41 @@
+.list {
+  width: 100%;
+}
+
+.experiences-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experiences-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.experiences-experience {
+  top: 20px;
+  width: inherit;
+}
+
+.experiences-duration {
+  top: 40px;
+  width: inherit;
+}
+.experiences-guide {
+  top: 60px;
+  width: inherit;
+}
+.experiences-description {
+  top: 80px;
+  width: inherit;
+}
+
+.experiences-delete {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

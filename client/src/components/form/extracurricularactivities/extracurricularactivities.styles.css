@@ -1,0 +1,27 @@
+.list {
+  width: 100%;
+}
+
+.extracurricularactivities-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extracurricularactivities-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.extracurricularactivities-extracurricularactivity {
+  top: 20px;
+  width: inherit;
+}
+.extracurricularactivities-delete {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

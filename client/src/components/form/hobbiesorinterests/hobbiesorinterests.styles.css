@@ -1,0 +1,27 @@
+.list {
+  width: 100%;
+}
+
+.hobbiesorinterests-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hobbiesorinterests-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.hobbiesorinterests-hobbyorinterest {
+  top: 20px;
+  width: inherit;
+}
+.hobbiesorinterests-delete {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

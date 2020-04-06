@@ -1,0 +1,27 @@
+.list {
+  width: 100%;
+}
+
+.areaofinterest-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.areaofinterest-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.areaofinterest-interest {
+  top: 20px;
+  width: inherit;
+}
+.areaofinterest-delete {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

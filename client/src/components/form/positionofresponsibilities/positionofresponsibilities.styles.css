@@ -1,0 +1,37 @@
+.list {
+  width: 100%;
+}
+
+.positionofresponsibilities-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.positionofresponsibilities-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.positionofresponsibilities-position {
+  top: 20px;
+  width: inherit;
+}
+
+.positionofresponsibilities-duration {
+  top: 40px;
+  width: inherit;
+}
+.positionofresponsibilities-description {
+  top: 60px;
+  width: inherit;
+}
+
+.positionofresponsibilities-delete {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

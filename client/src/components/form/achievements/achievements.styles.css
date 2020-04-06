@@ -1,0 +1,27 @@
+.list {
+  width: 100%;
+}
+
+.achievements-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievements-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.achievements-achievement {
+  top: 20px;
+  width: inherit;
+}
+.achievements-delete {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

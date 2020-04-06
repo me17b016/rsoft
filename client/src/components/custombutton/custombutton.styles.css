@@ -1,0 +1,55 @@
+.custom-button-green {
+  padding: 15px 30px;
+  color: #15a374;
+  text-decoration: none;
+  transition: 0.2s;
+  outline: none;
+  background: none;
+  font-weight: 750;
+  border: 1px solid #15a374 ;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.custom-button-green:hover {
+  color: #08AC37;
+  background: #6EF2B0;
+  box-shadow: 0 0 10px #6EF2B0, 0 0 40px #6EF2B0, 0 0 80px #6EF2B0;
+  border: 3px solid #255784 ;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 11px;
+  transition-delay: 0.01s;
+  cursor: pointer;
+}
+
+.custom-button-red {
+  padding: 15px 30px;
+  color: #e53935;
+  text-decoration: none;
+  transition: 0.2s;
+  outline: none;
+  background: none;
+  font-weight: 750;
+  border: 1px solid #e53935 ;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.custom-button-red:hover {
+  cursor: pointer;
+  color: #b71c1c;
+  background: #FF2323;
+  box-shadow: 0 0 10px #FF2323, 0 0 40px #FF2323, 0 0 80px #FF2323;
+  border: 3px solid #255784 ;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 11px;
+  transition-delay: 0.01s;
+}

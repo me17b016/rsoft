@@ -1,0 +1,10 @@
+.drag-handle {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  right: 10px;
+  cursor: grab;
+  user-select: none;
+  color: #004d40;
+  font-weight: 800;
+  font-size: 1.1rem;
+}

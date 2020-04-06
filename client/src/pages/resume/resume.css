@@ -1,0 +1,99 @@
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.resume-side-navigation {
+  /* width: 420px; */
+  flex: 0.9;
+}
+.resume-content-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+}
+
+.resume-form {
+  /* width: 1070px; */
+  flex: 2.3;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background-color: #081018;
+  border: 1px solid #455a64;
+} 
+.resume-text {
+  z-index: -1;
+  max-width: 100%;
+  color: white;
+  opacity: 0.7;
+  width: inherit;
+  text-align: center;
+}
+.resume-fix {
+  position: fixed;
+}
+.resume-form::-webkit-scrollbar {
+  background-color:#fff;
+  width:8px;
+  height: 8px;
+}
+
+/* background of the scrollbar except button or resizer */
+.resume-form::-webkit-scrollbar-track {
+  background-color:#263238
+}
+
+/* scrollbar itself */
+.resume-form::-webkit-scrollbar-thumb {
+  background-color:#546e7a;
+  border-radius:4px;
+  border:2px solid #263238
+}
+
+/* set button(top and bottom of the scrollbar) */
+.resume-form::-webkit-scrollbar-button {display:none}
+
+.resume-preview {
+  background-color: #081018;
+  border-top: 1px solid #455a64;
+  border-right: 1px solid #455a64;
+  padding: 0%;
+  margin: 0%;
+  /* width: 100%; */
+  flex: 3;
+  overflow-x: auto;
+  overflow-y: auto;
+  align-items: center;
+  scrollbar-width: thin;
+  
+}
+.resume-preview-container {
+  overflow-x: auto;
+}
+.pdf {
+  margin-left: 25px;
+}
+
+.resume-preview::-webkit-scrollbar {
+  background-color:#fff;
+  width:8px;
+  height: 8px;
+}
+
+/* background of the scrollbar except button or resizer */
+.resume-preview::-webkit-scrollbar-track {
+  background-color:#263238
+}
+
+/* scrollbar itself */
+.resume-preview::-webkit-scrollbar-thumb {
+  background-color:#546e7a;
+  border-radius:4px;
+  border:2px solid #263238
+}
+
+/* set button(top and bottom of the scrollbar) */
+.resume-preview::-webkit-scrollbar-button {display:none}

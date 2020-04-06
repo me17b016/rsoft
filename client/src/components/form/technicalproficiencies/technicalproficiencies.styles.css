@@ -1,0 +1,33 @@
+.list {
+  width: 100%;
+}
+
+.technicalproficiencies-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.technicalproficiencies-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.technicalproficiencies-title {
+  top: 20px;
+  width: inherit;
+}
+
+.technicalproficiencies-value {
+  top: 40px;
+  width: inherit;
+}
+
+.technicalproficiencies-delete {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

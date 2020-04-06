@@ -1,0 +1,41 @@
+.list {
+  width: 100%;
+}
+
+.projects-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.projects-name {
+  top: 20px;
+  width: inherit;
+}
+
+.projects-duration {
+  top: 40px;
+  width: inherit;
+}
+.projects-guide {
+  top: 60px;
+  width: inherit;
+}
+.projects-description {
+  top: 80px;
+  width: inherit;
+}
+
+.projects-delete {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

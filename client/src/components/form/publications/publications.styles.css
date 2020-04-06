@@ -1,0 +1,45 @@
+.list {
+  width: 100%;
+}
+
+.publications-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publications-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.publications-title {
+  top: 20px;
+  width: inherit;
+}
+
+.publications-authors {
+  top: 40px;
+  width: inherit;
+}
+.publications-place {
+  top: 60px;
+  width: inherit;
+}
+.publications-doi {
+  top: 80px;
+  width: inherit;
+}
+.publications-description {
+  top: 100px;
+  width: inherit;
+}
+
+.publications-delete {
+  margin-top: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

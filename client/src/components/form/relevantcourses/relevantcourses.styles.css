@@ -1,0 +1,27 @@
+.list {
+  width: 100%;
+}
+
+.relevantcourses-add-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relevantcourses-fields {
+  width: 100%;
+  align-items: center;
+  /* overflow-x: auto; */
+}
+
+.relevantcourses-relevantcourse {
+  top: 20px;
+  width: inherit;
+}
+.relevantcourses-delete {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
