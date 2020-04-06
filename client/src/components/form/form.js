@@ -82,7 +82,7 @@ class Form extends React.Component {
     //   console.log(err);
     // }
     //let body = { educationDetails: this.state.educationDetails, areaOfInterest: this.state.areaOfInterest};
-    axios.post(`http://localhost:4000/generate`, JSON.stringify(this.state), config)
+    axios.post('/api/generate', JSON.stringify(this.state), config)
       .then(response => {
         //Create a Blob from the PDF Stream
         const file = new Blob([response.data], {

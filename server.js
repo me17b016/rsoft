@@ -25,4 +25,4 @@ app.listen(PORT, () => console.log('Server running in PORT ', PORT));
 
 app.get('/', (req, res) => res.send('Welcome to backend'));
 
-app.use('/generate', generate)
+app.use('/api/generate', generate)
