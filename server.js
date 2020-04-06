@@ -19,10 +19,11 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => console.log('Server running in PORT ', PORT));
 
 // routes
 
 app.get('/', (req, res) => res.send('Welcome to backend'));
 
 app.use('/api/generate', generate)
+
+app.listen(PORT, () => console.log('Server running in PORT ', PORT));
