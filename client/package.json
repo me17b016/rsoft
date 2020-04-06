@@ -19,6 +19,7 @@
     "axios": "^0.19.2",
     "react-helmet": "^5.2.1",
     "react-pdf": "^4.1.0",
+    "react-router-dom": "^5.1.2",
     "react-sortable-hoc": "^1.11.0"
   },
   "scripts": {
