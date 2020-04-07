@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 //app.get('/', (req, res) => res.send('Welcome to backend'));
-app.use('/api/generate', generate)
+app.use('/api/generate', generate);
 
 
 if (process.env.NODE_ENV === 'production') {
