@@ -55,7 +55,7 @@ Router.post('/', (req, res) => {
   let pdfPath = path.join(__dirname, '../../', 'resumefiles', pdfName);
   const input = fs.createReadStream(texPath)
   const output = fs.createWriteStream(pdfPath)
-  
+  console.log(input);
   const pdf = latex(input)
   
   pdf.pipe(output)
