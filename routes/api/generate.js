@@ -43,7 +43,7 @@ Router.post('/', (req, res) => {
   let base64Image = base64String.split(';base64,').pop();
   const imagePath = path.join(__dirname, '../../', 'resumefiles', imageName);
   fs.writeFile(imagePath, base64Image, {encoding: 'base64'}, function(err) {
-    // console.log('Image created');
+    console.log('Image created');
   });
 
   // Creating tex file
@@ -91,21 +91,21 @@ Router.post('/', (req, res) => {
     fs.stat(pdfPath, (err, stats) => {
       fs.unlink(pdfPath, (err) =>{
         //if (err) throw err;
-        // console.log('Pdf deleted');
+        console.log('Pdf deleted');
       })
     })
     
     fs.stat(imagePath, (err, stats) => {
       fs.unlink(imagePath, (err) =>{
         //if (err) throw err;
-        // console.log('Image deleted');
+        console.log('Image deleted');
       })
     })
     
     fs.stat(texPath, (err, stats) => {
       fs.unlink(texPath, (err) =>{
         // if (err) throw err;
-        // console.log('Tex file deleted');
+        console.log('Tex file deleted');
       })
     })
     
