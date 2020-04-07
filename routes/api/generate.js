@@ -21,6 +21,9 @@ Router.get('/delete', (req, res) => {
   res.send('All files deleted');
 })
 
+Router.get('/', (req, res) => {
+  res.send('this route is working')
+})
 
 // POST
 Router.post('/', (req, res) => {
