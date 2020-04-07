@@ -60,7 +60,7 @@ Router.post('/', (req, res) => {
   
   pdf.pipe(output)
   pdf.on('error', err => {
-    // console.error(err)
+    console.error("pdf not generated", err);
     fs.stat(pdfPath, (err, stats) => {
       //if (err) console.log(err);
       fs.unlink(pdfPath, (err) =>{
