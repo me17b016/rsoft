@@ -22,7 +22,7 @@ Router.get('/delete', (req, res) => {
 })
 
 Router.get('/', (req, res) => {
-  res.send('this route is working')
+  res.send('this route is working');
 })
 
 // POST
