@@ -1,11 +1,4 @@
-anysize 
-amsmath 
-amssymb 
-graphicx 
-color 
-verbatim 
-hyperref 
-latexsym 
-mdwlist 
-tabularx
-geometry 
+collection-bibtexextra
+collection-fontsextra
+collection-langgerman
+collection-xetex
