@@ -4,3 +4,8 @@ amsfonts
 hyperref
 multirow
 mdwtools
+infwarerr
+pdfescape
+letltxmacro
+bitset
+pdftex
