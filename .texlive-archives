@@ -1,2 +1,12 @@
 anysize
+amsmath
 amssymb
+graphicx
+geometry
+color
+verbatim
+tabularx
+mdwlist
+latexsym
+multirow
+hyperref
