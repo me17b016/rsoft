@@ -49,7 +49,7 @@ Router.post('/', (req, res) => {
   // Creating tex file
   let texPath = path.join(__dirname, '../../', 'resumefiles', texName);
   raw.basicDetails.imageName = imagePath;
-  makeTex(raw, texPath);
+  makeTex(raw, texPath)
 
   // Creating Pdf 
   let pdfPath = path.join(__dirname, '../../', 'resumefiles', pdfName);
