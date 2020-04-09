@@ -30,7 +30,7 @@ class About extends React.Component {
           <p style={{marginTop:0, paddingLeft:20, paddingBottom: 10}}>Before reporting make sure about checked all your input fields and read above points </p>
           <a className="report-issue-link" target="_blank" href="https://forms.gle/c1earJr733WtUm4j8">Report Issue</a>
           <h1 style={{marginTop:20, paddingTop:20, paddingLeft: 20}}>Developer</h1>
-          <p style={{marginTop:0, paddingLeft:20}}>My name is Raj Garg and I am currently pursuing my third year of Bachelor in Mechanical Enginnering in IIT, Tirupati</p>
+          <p style={{marginTop:0, paddingLeft:20}}>My name is Raj Garg and I am currently pursuing my third year of Bachelor in Mechanical Engineering in IIT, Tirupati</p>
         </div>      
       </div>
     );
