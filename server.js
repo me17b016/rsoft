@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+const path = require('path');
 const generate = require('./routes/api/generate');
 
 const app = express();
@@ -20,7 +20,6 @@ if (process.env.NODE_ENV === 'production') {
   //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')); // relative path
   // });
 }
-
 
 // routes
 
