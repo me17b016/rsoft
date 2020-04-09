@@ -2,7 +2,7 @@ import React from 'react';
 import './landingpage.css';
 
 import TopNavBar from '../../components/topnavbar/topnavbar.component';
-
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 class LandingPage extends React.Component {
@@ -21,6 +21,9 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className="landingpage">
+        <Helmet>
+          <title>RSOFT</title>
+        </Helmet>
         <TopNavBar />
         <div className="landingpage-content">
           <div className="rsoft-heading-box">

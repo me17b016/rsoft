@@ -18,7 +18,7 @@
   margin-left: 20px;
   padding: 0;
   align-items: center;
-  flex: 1;
+  flex: 1.4;
 }
 
 .toolbar-download:hover {
@@ -65,5 +65,28 @@
 }
 
 .toolbar-forward:hover {
+  color: aqua;
+}
+
+.toolbar-zoom {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar-zoom-out {
+  cursor: pointer;
+}
+
+.toolbar-zoom-out:hover {
+  color: aqua;
+}
+.toolbar-zoom-in {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.toolbar-zoom-in:hover {
   color: aqua;
 }

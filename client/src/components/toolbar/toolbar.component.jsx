@@ -2,7 +2,8 @@ import React from 'react';
 import './toolbar.styles.css';
 
 import GetAppTwoToneIcon from '@material-ui/icons/GetAppTwoTone';
-
+import ZoomOutSharpIcon from '@material-ui/icons/ZoomOutSharp';
+import ZoomInSharpIcon from '@material-ui/icons/ZoomInSharp';
 const ToolBar = props => 
   <div className="toolbar">
     <div className="toolbar-download">
@@ -19,6 +20,10 @@ const ToolBar = props =>
       <button className="toolbar-forward" onClick={() => props.nextPage()}>
         <i className="fa fa-long-arrow-right"></i>
       </button>
+    </div>
+    <div className="toolbar-zoom">
+      <ZoomOutSharpIcon className="toolbar-zoom-out" onClick={() => props.zoomOut()}/>
+      <ZoomInSharpIcon className="toolbar-zoom-in" onClick={() => props.zoomIn()}/>
     </div>
   </div>
 

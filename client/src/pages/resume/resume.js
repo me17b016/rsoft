@@ -16,7 +16,8 @@ class Resume extends React.Component {
     this.state = {
       numPages: null,
       pageNumber: 1,
-      url:pdf
+      url:pdf,
+      scale: 1
     }
   }
 
@@ -44,6 +45,16 @@ class Resume extends React.Component {
     })
   }
   
+  zoomOut = () => {
+    let zoom = Math.max(this.state.scale - 0.1, 0.5);
+    this.setState({scale:zoom});
+  }
+
+  zoomIn = () => {
+    let zoom = Math.min(this.state.scale + 0.1, 1);
+    this.setState({scale:zoom});
+  }
+
   render() {
     const { pageNumber} = this.state;
 
@@ -77,14 +88,21 @@ class Resume extends React.Component {
             <ToolBar pdfUrl={this.state.url} 
               pageNumber={pageNumber} 
               prePage={this.prePage}
-              nextPage={this.nextPage}/>
+              nextPage={this.nextPage}
+              zoomOut={this.zoomOut}
+              zoomIn={this.zoomIn}
+              />
             <div className="pdf">
               
               <Document
                 file={this.state.url}
                 onLoadSuccess={this.onDocumentLoadSuccess}
               >
-                <Page pageNumber={pageNumber} />
+                <Page className="resume-page" 
+                  scale={this.state.scale} 
+                  pageNumber={pageNumber} 
+                  renderAnnotations={false}
+                  renderTextLayer={false}/>
               </Document>
               
             </div>

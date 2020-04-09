@@ -89,12 +89,17 @@ class Form extends React.Component {
           type: "application/pdf"
         });
         //Build a URL from the file
-        const fileURL = URL.createObjectURL(file);
-        this.props.changeURl(fileURL);
-        //localStorage.setItem('rsoft-image', this.state.basicDetails.image);
-        localStorage.setItem('rsoft-resume', JSON.stringify(this.state))
+        //console.log(response.data.size)
+        if (response.data.size === 0) {alert("Some error occurred, Check you input text or Report issue.")}
+        else {
+          const fileURL = URL.createObjectURL(file);
+          this.props.changeURl(fileURL);
+          //localStorage.setItem('rsoft-image', this.state.basicDetails.image);
+          localStorage.setItem('rsoft-resume', JSON.stringify(this.state))
+        }
       })
       .catch(error => {
+        console.log(error)
         // alert("Some error occurred, Check you input text")
         //console.log(error);
       });

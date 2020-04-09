@@ -12,9 +12,11 @@ Router.get('/delete', (req, res) => {
   const directory = path.join(__dirname, '../../', 'resumefiles');
   fs.readdir(directory, (err, files) => {
     for (const file of files) {
-      fs.unlink(path.join(directory, file), err => {
-        
-      });
+      if (file !== "nouse.js") {
+        fs.unlink(path.join(directory, file), err => {
+          
+        });
+      }
     }
   });
 
@@ -55,12 +57,14 @@ Router.post('/', (req, res) => {
   let pdfPath = path.join(__dirname, '../../', 'resumefiles', pdfName);
   const input = fs.createReadStream(texPath)
   const output = fs.createWriteStream(pdfPath)
-  console.log(input);
+  // console.log(input);
   const pdf = latex(input)
-  
+  let nousePath = path.join(__dirname, '../../', 'resumefiles', "nouse.js");
   pdf.pipe(output)
   pdf.on('error', err => {
     console.error("pdf not generated", err);
+    let file = fs.createReadStream(nousePath)
+    file.pipe(res);
     fs.stat(pdfPath, (err, stats) => {
       //if (err) console.log(err);
       fs.unlink(pdfPath, (err) =>{

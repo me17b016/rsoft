@@ -64,19 +64,25 @@
   margin: 0%;
   /* width: 100%; */
   flex: 3;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   overflow-y: auto;
   align-items: center;
   scrollbar-width: thin;
   
 }
 .resume-preview-container {
-  overflow-x: auto;
-}
-.pdf {
-  margin-left: 25px;
+  /* overflow-x: auto; */
 }
 
+.resume-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  max-width: 100% !important;
+  height: auto;
+}
 .resume-preview::-webkit-scrollbar {
   background-color:#fff;
   width:8px;
