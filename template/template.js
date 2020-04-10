@@ -241,7 +241,7 @@ function relevantCourses(relevantCourses, texPath) {
       if (course2 != "") fs.appendFileSync(texPath, `&$\\bullet$ ${updateValueLatex(course2)}\\\\[0.05in]\n`);
       else fs.appendFileSync(texPath, '\\\\[0.05in]\n');
   }
-  fs.appendFileSync(texPath, `\\hspace{0.9pc}\\textbf{\* To be completed in December 2020}\n\n\n`);
+  fs.appendFileSync(texPath, `\\hspace{0.9pc}\\textbf{\* To be completed in May 2020}\n\n\n`);
   fs.appendFileSync(texPath, `\\end{tabular}\n\n\n`);
   
 }
