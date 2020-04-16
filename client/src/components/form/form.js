@@ -53,10 +53,9 @@ class Form extends React.Component {
   }
   stateChange = (fieldName, stateField) => {
     //const currentState = this.state;
-
     this.setState({
       [fieldName] : stateField
-    });
+    }, () => localStorage.setItem('rsoft-resume', JSON.stringify(this.state)));
   }
 
 
@@ -97,7 +96,7 @@ class Form extends React.Component {
           const fileURL = URL.createObjectURL(file);
           this.props.changeURl(fileURL);
           //localStorage.setItem('rsoft-image', this.state.basicDetails.image);
-          localStorage.setItem('rsoft-resume', JSON.stringify(this.state))
+          // localStorage.setItem('rsoft-resume', JSON.stringify(this.state))
         }
       })
       .catch(error => {
