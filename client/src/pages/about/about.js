@@ -27,7 +27,7 @@ class About extends React.Component {
           <p style={{marginTop:0, paddingLeft:20}}>You can always delete your data from your device by clicking "Make New Resume" button on landing page and make new resume. </p>
           <p style={{marginTop:0, paddingLeft:20}}>Report an issue if pdf is not generating.</p>
           <h1 style={{marginTop:20, paddingTop:20, paddingLeft: 20}}>Report Your Issue</h1>
-          <p style={{marginTop:0, paddingLeft:20, paddingBottom: 10}}>Before reporting make sure about checked all your input fields and read above points. </p>
+          <p style={{marginTop:0, paddingLeft:20, paddingBottom: 10}}>Before reporting make sure you have checked all your input fields and read above points. </p>
           <a className="report-issue-link" target="_blank" href="https://forms.gle/c1earJr733WtUm4j8">Report Issue</a>
           <h1 style={{marginTop:20, paddingTop:20, paddingLeft: 20}}>Developer</h1>
           <p style={{marginTop:0, paddingLeft:20, paddingBottom: 40}}>My name is Raj Garg and I am currently pursuing my third year of Bachelor's in Mechanical Engineering from IIT, Tirupati.</p>
