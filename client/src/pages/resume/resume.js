@@ -17,12 +17,17 @@ class Resume extends React.Component {
       numPages: null,
       pageNumber: 1,
       url:pdf,
-      scale: 1
+      scale: 1,
+      generateButtonStatus: 'generate'
     }
   }
 
   changeURl = url => {
     this.setState({url: url})
+  }
+
+  changeGenerateButtonStatus = status => {
+    this.setState({ generateButtonStatus : status });
   }
 
   onDocumentLoadSuccess = ({ numPages }) => {
@@ -77,11 +82,14 @@ class Resume extends React.Component {
         </div>
         <div className="resume-content-container">
           <div className="resume-side-navigation">
-            <SideNav />
+            <SideNav generateButtonStatus={this.state.generateButtonStatus}/>
           </div>
           <div className="resume-form">
             {/* <div className="resume-text"> This is sample test </div> */}
-            <Form changeURl={this.changeURl}/>
+            <Form 
+              changeURl={this.changeURl} 
+              changeGenerateButtonStatus={this.changeGenerateButtonStatus}
+            />
           </div>
           <div className="resume-preview">
             

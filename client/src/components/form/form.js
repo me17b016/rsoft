@@ -62,6 +62,7 @@ class Form extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    this.props.changeGenerateButtonStatus('generating');
     const config = {
       responseType: "blob", //Force to receive data in a Blob Format
       headers : {
@@ -90,6 +91,7 @@ class Form extends React.Component {
         });
         //Build a URL from the file
         //console.log(response.data.size)
+        this.props.changeGenerateButtonStatus('generate');
         if (response.data.size === 0) {alert("Some error occurred, Check you input text or Report issue.")}
         else {
           const fileURL = URL.createObjectURL(file);
@@ -100,6 +102,7 @@ class Form extends React.Component {
       })
       .catch(error => {
         console.log(error)
+        this.props.changeGenerateButtonStatus('generate');
         // alert("Some error occurred, Check you input text")
         //console.log(error);
       });

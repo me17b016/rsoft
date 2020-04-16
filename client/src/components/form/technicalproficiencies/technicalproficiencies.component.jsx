@@ -79,6 +79,7 @@ const TechnicalProficiencies = props => {
     const Fields = arrayMove(fields, oldIndex, newIndex);
     setFields(Fields);
     fieldReturn(Fields);
+    toggleGrabCursor();
   }
 
   const stateChange = (id, name, value) => {
@@ -92,24 +93,32 @@ const TechnicalProficiencies = props => {
     setFields(Fields);
     fieldReturn(Fields);
   }
+
+  const onSortStart = () => {
+    toggleGrabCursor()
+  }
+  const toggleGrabCursor = () => {
+    document.body && document.body.classList.toggle('grabbing')
+  }
   
-    return (
-      <Fragment>
-        <Helmet>
-          <title>Technical Proficiencies</title>
-        </Helmet>
-        <SortableContainer  
-          items={fields} 
-          useDragHandle lockAxis="y" 
-          onSortEnd={onSortEnd}
-          delete={Delete}
-          stateChange={stateChange}
-        />
-        <div className="technicalproficiencies-add-button">
-          <CustomButton name={"ADD"} onClick={add} color={'green'}/>
-        </div>
-      </Fragment>
-    );
+  return (
+    <Fragment>
+      <Helmet>
+        <title>Technical Proficiencies</title>
+      </Helmet>
+      <SortableContainer  
+        items={fields} 
+        useDragHandle lockAxis="y" 
+        onSortStart={onSortStart}
+        onSortEnd={onSortEnd}
+        delete={Delete}
+        stateChange={stateChange}
+      />
+      <div className="technicalproficiencies-add-button">
+        <CustomButton name={"ADD"} onClick={add} color={'green'}/>
+      </div>
+    </Fragment>
+  );
 }
 
 

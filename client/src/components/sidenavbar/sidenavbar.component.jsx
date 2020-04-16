@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './sidenavbar.styles.css';
+import FacebookProgress from '../spinnerbutton/spinnerbutton.component';
 
 const SideNav = props => {
 
@@ -22,7 +23,7 @@ const SideNav = props => {
         }
       </div>
       <div className="side-nav-extras">
-        <button form="resumeform" className="side-nav-savemake"> GENERATE </button>
+      { props.generateButtonStatus === 'generate' ? <button form="resumeform" className="side-nav-savemake"> GENERATE </button> : <FacebookProgress />}
       </div>
     </div>
   );

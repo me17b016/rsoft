@@ -75,6 +75,7 @@ const AreasOfInterest = props => {
     const Fields = arrayMove(fields, oldIndex, newIndex);
     setFields(Fields);
     fieldReturn(Fields);
+    toggleGrabCursor();
   }
 
   const stateChange = (id, name, value) => {
@@ -89,23 +90,31 @@ const AreasOfInterest = props => {
     fieldReturn(Fields);
   }
   
-    return (
-      <Fragment>
-        <Helmet>
-          <title>Areas of Interest</title>
-        </Helmet>
-        <SortableContainer  
-          items={fields} 
-          useDragHandle lockAxis="y" 
-          onSortEnd={onSortEnd}
-          delete={Delete}
-          stateChange={stateChange}
-        />
-        <div className="areaofinterest-add-button">
-          <CustomButton name={"ADD"} onClick={add} color={'green'}/>
-        </div>
-      </Fragment>
-    );
+  const onSortStart = () => {
+    toggleGrabCursor()
+  }
+  const toggleGrabCursor = () => {
+    document.body && document.body.classList.toggle('grabbing')
+  }
+
+  return (
+    <Fragment>
+      <Helmet>
+        <title>Areas of Interest</title>
+      </Helmet>
+      <SortableContainer  
+        items={fields} 
+        useDragHandle lockAxis="y" 
+        onSortStart={onSortStart}
+        onSortEnd={onSortEnd}
+        delete={Delete}
+        stateChange={stateChange}
+      />
+      <div className="areaofinterest-add-button">
+        <CustomButton name={"ADD"} onClick={add} color={'green'}/>
+      </div>
+    </Fragment>
+  );
 }
 
 

@@ -83,6 +83,7 @@ const EducationDetails = props => {
     const Fields = arrayMove(fields, oldIndex, newIndex);
     setFields(Fields);
     fieldReturn(Fields);
+    toggleGrabCursor();
   }
 
   const stateChange = (id, name, value) => {
@@ -96,7 +97,12 @@ const EducationDetails = props => {
     setFields(Fields);
     fieldReturn(Fields);
   }
-  
+  const onSortStart = () => {
+    toggleGrabCursor()
+  }
+  const toggleGrabCursor = () => {
+    document.body && document.body.classList.toggle('grabbing')
+  }
     return (
       <Fragment>
         <Helmet>
@@ -105,6 +111,7 @@ const EducationDetails = props => {
         <SortableContainer  
           items={fields} 
           useDragHandle lockAxis="y" 
+          onSortStart={onSortStart}
           onSortEnd={onSortEnd}
           delete={Delete}
           stateChange={stateChange}
