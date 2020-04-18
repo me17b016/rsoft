@@ -27,9 +27,10 @@
   /* Position the tooltip */
   position: absolute;
   z-index: 1000;
+  top: 100%;
   left: 50%;
-  margin-top: 10px;
-  margin-left: -90px;
+  margin-top: -160px;
+  margin-left: 30px;
   font-family: 'Raleway', sans-serif;
   font-size: 0.83rem;
   font-weight: 600;
