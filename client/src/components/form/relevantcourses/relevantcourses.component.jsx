@@ -123,7 +123,7 @@ const RelevantCourses = props => {
                 onChange={(e) => tbcChange(e.target.value)}/>
         <div className="relevantcourses-icon">
           <InfoTwoToneIcon style={{ color: 'green'}}/>
-          <div className="tooltiptext"><p>For ongoing courses use asterisks(*) at the end of the each course name. For example Data Structures and Algorithms*. And, here write </p><p>* To be completed in &lt;MONTH> &lt;YEAR></p></div>
+          <span className="tooltiptext"><p>For ongoing courses use asterisks(*) at the end of the each course name. For example Data Structures and Algorithms*. And, here write </p><p>* To be completed in &lt;MONTH> &lt;YEAR></p></span>
         </div>
       </div>
       <div className="relevantcourses-add-button">
