@@ -42,7 +42,9 @@ function makeTex(raw, texPath) {
       Projects(raw['Projects'],texPath);
   }
   if(raw['relevantCourses'].length>0){
-      relevantCourses(raw['relevantCourses'],texPath);
+      let TBC = "";
+      if (raw['TBC']) TBC = raw['TBC'];
+      relevantCourses(raw['relevantCourses'], TBC, texPath);
   }
   if(raw['Achievements'].length>0){
       achievements(raw['Achievements'],texPath);
@@ -227,7 +229,7 @@ function Projects(Projects, texPath) {
   }
 }
 
-function relevantCourses(relevantCourses, texPath) {
+function relevantCourses(relevantCourses, TBC, texPath) {
   const fs = require('fs');
   let rc = `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Relevant Courses}}}\\\\[0.08in]
   \\begin{tabular}{p{3.5in}p{3in}p{2.5in}}\n`;
@@ -241,7 +243,9 @@ function relevantCourses(relevantCourses, texPath) {
       if (course2 != "") fs.appendFileSync(texPath, `&$\\bullet$ ${updateValueLatex(course2)}\\\\[0.05in]\n`);
       else fs.appendFileSync(texPath, '\\\\[0.05in]\n');
   }
-  fs.appendFileSync(texPath, `\\hspace{0.9pc}\\textbf{\* To be completed in May 2020}\n\n\n`);
+  if (TBC !== "") {
+    fs.appendFileSync(texPath, `\\hspace{0.9pc}\\textbf{${updateValueLatex(TBC)}}\n\n\n`);
+  }
   fs.appendFileSync(texPath, `\\end{tabular}\n\n\n`);
   
 }

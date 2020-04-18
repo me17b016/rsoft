@@ -39,7 +39,8 @@ class Form extends React.Component {
       Achievements: [],
       positionOfResponsibilities: [],
       extraCurricularActivities: [],
-      hobbiesOrInterests: []
+      hobbiesOrInterests: [],
+      TBC: ""
     }
   }
 
@@ -137,7 +138,7 @@ class Form extends React.Component {
               <Experiences stateChange={this.stateChange} fields={this.state.Experiences} />
             </Route>
             <Route exact path="/resume/relevantcourses">
-              <RelevantCourses stateChange={this.stateChange} fields={this.state.relevantCourses} />
+              <RelevantCourses stateChange={this.stateChange} fields={this.state.relevantCourses} tbc={this.state.TBC}/>
             </Route>
             <Route exact path="/resume/achievements">
               <Achievements stateChange={this.stateChange} fields={this.state.Achievements} />

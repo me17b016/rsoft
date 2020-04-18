@@ -2,6 +2,42 @@
   width: 100%;
 }
 
+.relevantcourses-tbc-box {
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 3px solid #69f0ae;
+}
+.relevantcourses-tbc {
+  width: 100%;
+}
+.relevantcourses-icon .tooltiptext {
+  visibility: hidden;
+  width: 260px;
+  background-color: #69f0ae;
+  opacity: 0.9;
+  color: #081018;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  margin-top: 10px;
+  margin-left: -90px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+.relevantcourses-icon:hover .tooltiptext {
+  visibility: visible;
+}
 .relevantcourses-add-button {
   padding-top: 20px;
   display: flex;

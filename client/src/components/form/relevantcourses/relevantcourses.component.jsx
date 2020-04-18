@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import './relevantcourses.styles.css';
 
 import CustomButton from '../../custombutton/custombutton.component';
-
+import InfoTwoToneIcon from '@material-ui/icons/InfoTwoTone';
 import { Helmet } from "react-helmet";
 import {
   sortableContainer,
@@ -21,6 +21,7 @@ import CustomExpansionSummary from '../../expansionpanelsummary/expansionpanelsu
 const RelevantCourses = props => {
   
   const [numberOfFields, setNumberOfFields] = useState(0);
+  const [TBC, setTBC] = useState(""); 
   const [fields, setFields] = useState([]);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const RelevantCourses = props => {
     }
     setNumberOfFields(nFields);
     setFields(fieldArray)
+    setTBC(props.tbc);
   }, [props])
 
   const fieldReturn = Fields => {
@@ -90,6 +92,11 @@ const RelevantCourses = props => {
     fieldReturn(Fields);
   }
   
+  const tbcChange = (value) => {
+    setTBC(value);
+    props.stateChange('TBC', value);
+  }
+
   const onSortStart = () => {
     toggleGrabCursor()
   }
@@ -110,6 +117,15 @@ const RelevantCourses = props => {
         delete={Delete}
         stateChange={stateChange}
       />
+      <div className="relevantcourses-tbc-box">
+      <TextField className="relevantcourses-tbc" label="To be completed" variant="outlined" value={TBC}
+                placeholder={"* To be completed in May 2020"}
+                onChange={(e) => tbcChange(e.target.value)}/>
+        <div className="relevantcourses-icon">
+          <InfoTwoToneIcon style={{ color: 'green'}}/>
+          <div className="tooltiptext"><p>For ongoing courses use asterisks(*) at the end of the each course name. For example Data Structures and Algorithms*. And, here write </p><p>* To be completed in &lt;MONTH> &lt;YEAR></p></div>
+        </div>
+      </div>
       <div className="relevantcourses-add-button">
         <CustomButton name={"ADD"} onClick={add} color={'green'}/>
       </div>
