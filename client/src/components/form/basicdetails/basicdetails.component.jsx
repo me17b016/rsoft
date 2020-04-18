@@ -11,12 +11,8 @@ const BasicDetails = props => {
   useEffect(() => {
     let newFields = {...props.fields};
     if (props.fields.image === "") {
-      newFields.imageURl = noProfileImage;
+      newFields.image = noProfileImage;
     }
-    else {
-      newFields.imageURl = newFields.image;
-    }
-    //newFields.imageURl = URL.createObjectURL(e.target.files[0]);
     setFields(newFields);
   }, [props])
 
@@ -34,7 +30,7 @@ const BasicDetails = props => {
 
         let newFields = {...fields};
 
-        newFields.imageURl = URL.createObjectURL(e.target.files[0]);
+        // newFields.imageURl = URL.createObjectURL(e.target.files[0]);
         newFields.imageName = realUplBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
         const file = e.target.files[0];
         getBase64(file).then(base64 => {
@@ -77,7 +73,7 @@ const BasicDetails = props => {
       </Helmet>
       <div className="basic-details-image">
         <figure className="basic-details-image-container">
-          <img className="basic-details-image-tag" src={fields.imageURl} width="50%" height="100%" alt="no profile"/>
+          <img className="basic-details-image-tag" src={fields.image} width="50%" height="100%" alt="no profile"/>
         </figure>
         <input id="real-upload-input" type="file"  hidden="hidden" accept="image/x-png,image/gif,image/jpeg" /> 
         <button type="button" id="custom-image-upload-button" 

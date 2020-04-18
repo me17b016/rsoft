@@ -45,9 +45,11 @@ class Form extends React.Component {
 
   componentDidMount() {
     const we = JSON.parse(localStorage.getItem('rsoft-resume'))
-    //console.log(we)
-    //we.basicDetails.image = localStorage.getItem('rsoft-image');
+    
     if (localStorage.getItem('rsoft-resume')) {
+      // deleting imageURL
+      we.basicDetails.imageURl = "testingURL";
+      localStorage.setItem('rsoft-resume', JSON.stringify(we));
       this.setState({...we})
     }
   }
