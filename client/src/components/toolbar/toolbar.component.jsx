@@ -13,8 +13,33 @@ const ToolBar = props => {
 
   const GenerateTex = async () => {
     setTexState("generating")
-    const we = localStorage.getItem('rsoft-resume')
-    //console.log(we);
+    let we = localStorage.getItem('rsoft-resume')
+    console.log(we);
+    if (we == null) {
+      let tem = {
+        basicDetails : {
+          image: "",
+          imageURl: "",
+          imageName: "No file chosen",
+          name: "",
+          degree: "",
+          linkedIn: ""
+        },
+        educationDetails: [],
+        areasOfInterest: [],
+        technicalProficiencies: [],
+        Publications: [],
+        Projects: [],
+        Experiences: [],
+        relevantCourses: [],
+        Achievements: [],
+        positionOfResponsibilities: [],
+        extraCurricularActivities: [],
+        hobbiesOrInterests: [],
+        TBC: ""
+      }
+      we = JSON.stringify(tem)
+    }
     const config = {
       responseType: "blob", //Force to receive data in a Blob Format
       headers : {
