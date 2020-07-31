@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const latex = require('node-latex');
 const makeTex = require('../../template/template');
+const makeTex2 = require('../../template/templatefortex')
 
 // GET
 // for deleting all files in resumefiles folder
@@ -23,7 +24,14 @@ Router.get('/delete', (req, res) => {
   res.send('All files deleted');
 })
 
-Router.get('/', (req, res) => {
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+} 
+
+Router.get('/', async (req, res) => {
+  await sleep(3000)
   res.send('this route is working');
 })
 
@@ -113,6 +121,35 @@ Router.post('/', (req, res) => {
       })
     })
     
+  })
+})
+
+// for tex file
+Router.post('/tex', (req, res) => {
+  
+  let raw = req.body;
+
+  // using hash name for each request
+  let fileName = crypto.randomBytes(20).toString('hex');
+  fileName.toString();
+
+  let imageName = fileName + '.png';
+
+  let texName = fileName + '.tex';
+
+  
+  const imagePath = "<YOUR PHOTO NAME WITHOUT EXTENSION>.png";
+  
+  // Creating tex file
+  let texPath = path.join(__dirname, '../../', 'resumefiles', texName);
+  raw.basicDetails.imageName = imagePath;
+  makeTex2(raw, texPath)
+  res.sendFile(texPath);
+  fs.stat(texPath, (err, stats) => {
+    fs.unlink(texPath, (err) =>{
+      // if (err) throw err;
+      console.log('Tex file deleted');
+    })
   })
 })
 

@@ -60,7 +60,7 @@ function makeTex(raw, texPath) {
   }
   fs.appendFileSync(texPath, "\\end{document}\n"); // document ends
 }
-let logopath=path.join(__dirname, '../', 'resumeassests', 'logoupdated.png');
+let logopath="<LOGO NAME WITHOUT EXTENSION>.png";
 logopath = logopath.split('\\').join('/');
 decimalIndex=logopath.lastIndexOf(".");
 pathStart=logopath.slice(0,decimalIndex);

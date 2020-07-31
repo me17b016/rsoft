@@ -18,11 +18,36 @@
   margin-left: 20px;
   padding: 0;
   align-items: center;
-  flex: 1.4;
+  flex: 0.6;
 }
 
 .toolbar-download:hover {
   color: lightcoral;
+}
+
+.toolbar-tex-download {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  padding: 0;
+  align-items: center;
+  flex: 0.7;
+}
+
+.toolbar-tex-download:hover {
+  color: #bbdefb;
+}
+
+.toolbar-tex-download-button {
+  background-color: cyan;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-top: 4px;
+  padding: 2px 5px;
+  border: 2px solid black;
+  font-family: 'Spartan', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .toolbar-pages {

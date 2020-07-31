@@ -3,6 +3,8 @@ import './hobbiesorinterests.styles.css';
 
 import CustomButton from '../../custombutton/custombutton.component';
 
+import Checkbox from '@material-ui/core/Checkbox';
+import { withStyles } from '@material-ui/core/styles';
 
 import {
   sortableContainer,
@@ -27,14 +29,24 @@ const HobbiesOrInterests = props => {
   useEffect(() => {
     const nFields = props.fields.length;
     let fieldArray = [];
+    let ok = false;
     for (let i = 0; i < nFields; i++) {
+      if (props.fields[i].appear == null) ok = true
       fieldArray.push({
         id: i + 1,
-        value: {hobbyorinterest: props.fields[i].hobbyorinterest}
+        value: {
+          appear : (props.fields[i].appear == null ? true : props.fields[i].appear),
+          hobbyorinterest: props.fields[i].hobbyorinterest
+        }
       })
     }
-    setNumberOfFields(nFields);
-    setFields(fieldArray)
+    if (ok) {
+      fieldReturn(fieldArray);
+    }
+    else {
+      setNumberOfFields(nFields);
+      setFields(fieldArray)
+    }
   }, [props])
 
   const fieldReturn = Fields => {
@@ -51,6 +63,7 @@ const HobbiesOrInterests = props => {
     const newField = {
       id: numberOfFields + 1, 
       value: {
+        appear : true,
         hobbyorinterest: ""
       }
     }
@@ -79,6 +92,20 @@ const HobbiesOrInterests = props => {
     toggleGrabCursor();
   }
 
+  // for checkbox
+  const checkChange = (id, event) => {
+    const Fields = [...fields];
+    for (let i = 0; i < Fields.length; i++) {
+      if (Fields[i].id === id) {
+        Fields[i].value["appear"] = event.target.checked;
+        break;
+      }
+    }
+    setFields(Fields);
+    fieldReturn(Fields);
+  }
+  
+  // for other fields
   const stateChange = (id, name, value) => {
    const Fields = [...fields];
     for (let i = 0; i < Fields.length; i++) {
@@ -110,6 +137,7 @@ const HobbiesOrInterests = props => {
         onSortEnd={onSortEnd}
         delete={Delete}
         stateChange={stateChange}
+        checkChange={checkChange}
       />
       <div className="hobbiesorinterests-add-button">
         <CustomButton name={"ADD"} onClick={add} color={'green'}/>
@@ -118,11 +146,20 @@ const HobbiesOrInterests = props => {
   );
 }
 
-
+const GreenCheckbox = withStyles({
+  root: {
+    color: "#69f0ae",
+    '&$checked': {
+      color: "#69f0ae",
+    },
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 
 const SortableItem = sortableElement( props => {
   const stateChange = props.stateChange;
+  const checkChange = props.checkChange;
 
   return (
     <div className="item">
@@ -137,6 +174,7 @@ const SortableItem = sortableElement( props => {
         
           <ExpansionPanelDetails>
             <div className="hobbiesorinterests-fields">
+            <GreenCheckbox checked={props.value.value.appear} onChange={e => checkChange(props.value.id, e)}/> In resume
               <TextField className="hobbiesorinterests-hobbyorinterest" label="Hobby or Interest(s)" variant="outlined" value={props.value.value.hobbyorinterest}
                 onChange={(e) => stateChange(props.value.id, "hobbyorinterest", e.target.value)}/>
               <div className="hobbiesorinterests-delete">
@@ -164,6 +202,7 @@ const SortableContainer = sortableContainer( props => {
             value={value}
             delete={props.delete}
             stateChange={props.stateChange}
+            checkChange={props.checkChange}
           />
         )
       }
