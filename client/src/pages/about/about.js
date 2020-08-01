@@ -31,6 +31,7 @@ class About extends React.Component {
           <p style={{marginTop:0, paddingLeft:20}}>My name is Raj Garg and I am currently pursuing my final year of Bachelor's in Mechanical Engineering from IIT, Tirupati.</p>
           <h1 style={{marginTop:0, paddingTop:20, paddingLeft: 20}}>How to Use </h1>
           <p style={{marginTop:0, paddingLeft:20}}>○ Image Size can be upto 250kb. Images with jpeg, jpg and png extensions are allowed.</p>
+          <p style={{marginTop:0, paddingLeft:40}}><b>Note : </b> If you are not able to upload your photo then change the name of your profile photo and keep it simple.</p>
           <p style={{marginTop:0, paddingLeft:20}}>○ Every section and fields are optional.</p>
           <p style={{marginTop:0, paddingLeft:20}}> ○ <img src={dotsrsoft} alt="4 dots" style={{margin:0, paddingRight:6}}/> In Every field you can see this 4 dots. By moving the cursor on this 4 dots, you can change the order of your project, courses, etc.</p>
           <p style={{marginTop:0, paddingLeft:20}}>○ In Publications, Experiences, Projects, Achievements, Position of Responsibility and Extra Curricular Activity, while writing description you can use double backslash (\\) to write into a new line</p>
@@ -51,7 +52,7 @@ class About extends React.Component {
           <p style={{marginTop:0, paddingLeft:20}}>○ Upload all three file in this project folder. <img src={threefilesrsoft} alt="3 files" /></p>
           <p style={{marginTop:0, paddingLeft:20}}>○ Open resume.tex and do the  following steps</p>
           <p style={{marginTop:0, paddingLeft:40}}>1. On line 47 change &lt; LOGO NAME WITHOUT EXTENSION> with IIT Tirupati logo name. (according to above pic, logo name will be: IITTLOGO)</p>
-          <p style={{marginTop:0, paddingLeft:40}}>2. Around line no. 57 you can see &lt; PHOTO NAME WITHOUT EXTENSION>. Change it with your photo name. (according to above pic, photo name will be: cfcat)</p>
+          <p style={{marginTop:0, paddingLeft:40}}>2. Around line no. 57 you can see &lt; YOUR PHOTO NAME WITHOUT EXTENSION>. Change it with your photo name. (according to above pic, photo name will be: cfcat)</p>
           <p style={{marginTop:0, paddingLeft:40}}><b>Note :</b> By default extension of your photo is png in the tex file <img src={photorsoft} alt="photo extension" />. In case your's photo extension is different then change it. (according to above pic of project folder it will be : <img src={photonameandextension} alt="photo name and extension"/></p>
           <h1 style={{marginTop:20, paddingTop:20, paddingLeft: 20}}>Report Your Issue</h1>
           <p style={{marginTop:0, paddingLeft:20, paddingBottom: 10}}>Before reporting make sure you have checked all your input fields and read above points. </p>

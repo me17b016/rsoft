@@ -14,7 +14,7 @@ const ToolBar = props => {
   const GenerateTex = async () => {
     setTexState("generating")
     let we = localStorage.getItem('rsoft-resume')
-    console.log(we);
+    //console.log(we);
     if (we == null) {
       let tem = {
         basicDetails : {
@@ -40,6 +40,12 @@ const ToolBar = props => {
       }
       we = JSON.stringify(tem)
     }
+    else {
+      we = JSON.parse(we);
+      we.basicDetails.image = "";
+      we = JSON.stringify(we);
+    }
+    //console.log(we);
     const config = {
       responseType: "blob", //Force to receive data in a Blob Format
       headers : {

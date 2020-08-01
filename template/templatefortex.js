@@ -113,7 +113,7 @@ function educationDetails(educationDetails, texPath) {
   for (let j = 0; j < educationDetails.length; j++) {
     let i = educationDetails[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     fs.appendFileSync(texPath, educationDetails_begin1);
@@ -123,7 +123,7 @@ function educationDetails(educationDetails, texPath) {
   for (let j = 0; j < educationDetails.length; j++) {
       let i = educationDetails[j];
       let appear = i['appear'];
-      if (appear) {
+      if (appear || appear == null) {
         fs.appendFileSync(texPath,`${updateValueLatex(i['programme'])} & ${updateValueLatex(i['institute'])} & ${updateValueLatex(i['year'])} & ${updateValueLatex(i['marks'])}\\\\ \n`);
       }
   }
@@ -137,7 +137,7 @@ function areaOfInterest(areaOfInterest, texPath) {
   for (let j = 0; j < areaOfInterest.length; j++) {
     let i = areaOfInterest[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     let aof_begin1 = "\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Areas of Interest}}}\n";
@@ -148,7 +148,7 @@ function areaOfInterest(areaOfInterest, texPath) {
   }
   let tem = "", arr = [];
   for (let i = 0; i < areaOfInterest.length; i++) {
-      if (areaOfInterest[i]['appear']) {
+      if (areaOfInterest[i]['appear'] || areaOfInterest[i]['appear'] == null) {
         arr.push(areaOfInterest[i]['interest'])
       }
   }
@@ -166,7 +166,7 @@ function technicalProficiency(technicalProficiency, texPath) {
   for (let j = 0; j < technicalProficiency.length; j++) {
     let i = technicalProficiency[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
   let tp1 = "\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Technical Proficiency}}}\\\\ \n\n";
@@ -177,7 +177,7 @@ function technicalProficiency(technicalProficiency, texPath) {
   for (let i = 0; i < technicalProficiency.length; i++) {
       let title = technicalProficiency[i]['title'];
       let values = technicalProficiency[i]['value'];
-      if (technicalProficiency[i]['appear']) {
+      if (technicalProficiency[i]['appear'] || technicalProficiency[i]['appear'] == null) {
         let tem = `\\textbf{\\small{${updateValueLatex(title)}}} &: &{{${updateValueLatex(values)}}} \\\\\n`;
         fs.appendFileSync(texPath, tem);
       }
@@ -192,7 +192,7 @@ function publications(publications, texPath) {
   for (let j = 0; j < publications.length; j++) {
     let i = publications[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     let pb = `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Publications}}} \n
@@ -205,7 +205,7 @@ function publications(publications, texPath) {
       let place = publications[i]['place'];
       let details = publications[i]['description'];
       let doi = publications[i]['doi'];
-      if (publications[i]['appear']) {
+      if (publications[i]['appear'] || publications[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\setlength{\\itemsep}{1pt}\n`);
         fs.appendFileSync(texPath, `\\item \\textbf{${updateValueLatex(title)}}\n`);
         fs.appendFileSync(texPath, `\\newline \\textbf{Authors:} ${updateValueLatex(author)}\n`);
@@ -224,7 +224,7 @@ function experiences(experience, texPath) {
   for (let j = 0; j < experience.length; j++) {
     let i = experience[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     let ap = "\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Experience}}}\n\n";
@@ -235,7 +235,7 @@ function experiences(experience, texPath) {
       let guide = experience[i]['guide'];
       let description = experience[i]['description'];
       let duration = experience[i]['duration'];
-      if (experience[i]['appear']) {
+      if (experience[i]['appear'] || experience[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\begin{itemize*}\n\\setlength{\\itemsep}{1pt}\n\\item \\textbf{${updateValueLatex(exper)}}`);
         if (guide == "") {
             fs.appendFileSync(texPath, `\\hfill {\\small{{\\textbf{[${updateValueLatex(duration)}]}}\\/}}\n`);
@@ -263,7 +263,7 @@ function Projects(Projects, texPath) {
   for (let j = 0; j < Projects.length; j++) {
     let i = Projects[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     let ap = "\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Projects}}}\n\n";
@@ -274,7 +274,7 @@ function Projects(Projects, texPath) {
       let guide = Projects[i]['guide'];
       let description = Projects[i]['description'];
       let duration = Projects[i]['duration'];
-      if (Projects[i]['appear']) {
+      if (Projects[i]['appear'] || Projects[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\begin{itemize*}\n\\setlength{\\itemsep}{1pt}\n\\item \\textbf{${updateValueLatex(project_name)}}`);
         if (guide == "") {
             fs.appendFileSync(texPath, `\\hfill {\\small{{\\textbf{[${updateValueLatex(duration)}]}}\\/}}\n`);
@@ -303,7 +303,7 @@ function relevantCourses(relevantCourses, TBC, texPath) {
   for (let j = 0; j < relevantCourses.length; j++) {
     let i = relevantCourses[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     let rc = `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Relevant Courses}}}\\\\[0.08in]
@@ -312,7 +312,7 @@ function relevantCourses(relevantCourses, TBC, texPath) {
   }
   let arr = [];
   for (let i = 0; i < relevantCourses.length; i++) {
-    if (relevantCourses[i]['appear']) {
+    if (relevantCourses[i]['appear'] || relevantCourses[i]['appear'] == null) {
       arr.push(relevantCourses[i]['relevantcourse'])
     }
   }
@@ -340,7 +340,7 @@ function achievements(achievements, texPath) {
   for (let j = 0; j < achievements.length; j++) {
     let i = achievements[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     fs.appendFileSync(texPath, `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Achievements}}}\n
@@ -348,7 +348,7 @@ function achievements(achievements, texPath) {
   }
   for (let i = 0; i < achievements.length; i++) {
       let achievement = achievements[i]['achievement'];
-      if (achievements[i]['appear']) {
+      if (achievements[i]['appear'] || achievements[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\item ${updateValueLatex(achievement)}\n`);
       }
   }
@@ -362,7 +362,7 @@ function positionOfResponsibilities(positionOfResponsibilities, texPath) {
   for (let j = 0; j < positionOfResponsibilities.length; j++) {
     let i = positionOfResponsibilities[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     fs.appendFileSync(texPath, `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Positions of Responsibility}}}\\\\\n\n`);
@@ -371,7 +371,7 @@ function positionOfResponsibilities(positionOfResponsibilities, texPath) {
       let position = positionOfResponsibilities[i]['position'];
       let duration = positionOfResponsibilities[i]['duration'];
       let workdescription = positionOfResponsibilities[i]['description'];
-      if (positionOfResponsibilities[i]['appear']) {
+      if (positionOfResponsibilities[i]['appear'] || positionOfResponsibilities[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\textbf{${updateValueLatex(position)}}  \\hfill {\\small{{\\textbf{[${updateValueLatex(duration)}]}}}\\/} \n`);
         fs.appendFileSync(texPath, `\\begin{itemize*} \n
         \\item ${updateValueLatex(workdescription)} \n
@@ -386,7 +386,7 @@ function extraCurricularActivities(extraCurricularActivities, texPath) {
   for (let j = 0; j < extraCurricularActivities.length; j++) {
     let i = extraCurricularActivities[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     fs.appendFileSync(texPath, `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Extra Curricular activities}}}\n\n`);
@@ -395,7 +395,7 @@ function extraCurricularActivities(extraCurricularActivities, texPath) {
   }
   for (let i = 0; i < extraCurricularActivities.length; i++) {
       let activity = extraCurricularActivities[i]['extracurricularactivity'];
-      if (extraCurricularActivities[i]['appear']) {
+      if (extraCurricularActivities[i]['appear'] || extraCurricularActivities[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\item ${updateValueLatex(activity)} \\hfill \n`); // error
       }
   }
@@ -409,14 +409,14 @@ function hobbiesOrInterests(hobbiesOrInterests, texPath) {
   for (let j = 0; j < hobbiesOrInterests.length; j++) {
     let i = hobbiesOrInterests[j];
     let appear = i['appear'];
-    if (appear) ok = true;
+    if (appear || appear == null) ok = true;
   }
   if (ok) {
     fs.appendFileSync(texPath, `\\colorbox{titleColor}{\\parbox{6.7in}{\\textbf{Hobbies and Interests}}}\n\n`);
   }
   for (let i = 0; i < hobbiesOrInterests.length; i++) {
       let hobby = hobbiesOrInterests[i]['hobbyorinterest'];
-      if (hobbiesOrInterests[i]['appear']) {
+      if (hobbiesOrInterests[i]['appear'] || hobbiesOrInterests[i]['appear'] == null) {
         fs.appendFileSync(texPath, `\\begin{itemize}
         \\setlength{\\itemsep}{1pt}\n`);
         fs.appendFileSync(texPath, `\\item ${updateValueLatex(hobby)}\n\\end{itemize}\n\n`);
